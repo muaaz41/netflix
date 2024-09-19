@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Pakistan Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+    .movie-card {
+        width: 172px;
+        display: inline-block;
+        margin-right: 20px;
+        }
+    .scroll-container {
+            overflow-x: auto; 
+            white-space: nowrap; 
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            scrollbar-width: none;
+        }
+        .reason-card .fa-tv,.fa-bullhorn,.fa-user {
+            position: absolute;
+            bottom: 10px; 
+            right: 10px; 
+            color: white;
+            font-size: 24px;
+        }
+        .bg-custom {
+            background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/04bef84d-51f6-401e-9b8e-4a521cbce3c5/null/PK-en-20240903-TRIFECTA-perspective_f209a29a-799d-4c4c-9190-b2a410cbfa06_large.jpg'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width:100%;
+            position:relative;
+        }
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); 
+            z-index: 1; 
+        }
+        body {
+            background-color: #141414; 
+            color: white;
+        }
+        .reason-card, .faq-item, .footer-background {
+            background: rgba(0, 0, 0, 0.8); 
+        }
+        .reason-card {
+            background: rgba(58, 15, 15, 0.8);
+            border-radius: 10px;
+            padding: 15px; 
+            text-align: center;
+            width: 100%; 
+            max-width: 236px; 
+            margin: 10px; 
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .reason-card p {
+            margin: 0; 
+        }
+        
+        @media (min-width: 846px) and (max-width: 1120px) {
+            .reason-card {
+                width:auto;
+                max-width: 350px; 
+                margin: 10px; 
+                display: flex;
+                justify-content: center;
+                flex-wrap:wrap
+            }
+        }
+
+        @media (max-width:591px) {
+            .reason-card {
+                width: auto; 
+                max-width: calc(100% - 10px);
+                margin: 5px 5px; 
+            }
+        }
+        .flex {
+            display: flex;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        h3 {
+            margin-bottom: 1rem;
+        }
+        .scroll-button {
+            margin: 0;
+            top: 200%;
+            left: 200%;
+            transform: translate(-200%, -200%);
+            width:20px;
+        }
+        .scroll-button1 {
+            margin: 0;
+            top: 300%;
+            right: 300%;
+            transform: translate(-300%, -300%);
+            width:20px;
+        }
+        .reason-background { 
+            padding: 40px 0; 
+        }
+        .faq-background {
+            background: rgba(0, 0, 0, 0.8); 
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .faq-item {
+            background: rgba(255, 255, 255, 0.1); 
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.2); 
+        }
+        .footer-background {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+        }
+        
+
+        .footer-link {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+        }
+        .footer-link:hover {
+    color: #e50914;
+        }
+
+        .language-selection {
+    margin-top: 10px;
+        }
+        .reason-card .fa-download {
+            font-size: 24px; 
+            color: white;
+            position: absolute;
+            bottom: 10px;
+            right: 10px; 
+            background-color: rgba(255, 255, 255, 0.2); 
+            border-radius: 50%;
+            padding: 5px; 
+        }
+    </style>
+</head>
+<body class="text-white flex flex-col items-center">
+    <div class="bg-custom h-screen flex flex-col justify-center items-center relative">
+        <div class="gradient-overlay"></div>
+        <div class="gradient-overlay"></div>
+        <div class="text-center mt-28 mb-16 z-10">
+            <h1 class="text-5xl font-bold mb-6">Unlimited movies, TV</h1>
+            <h1 class="text-5xl font-bold mb-6">shows, and more</h1>
+            <h3 class="font-semibold mb-6">Starts at Rs 250. Cancel anytime.</h3>
+            <h3 class="font-semibold mb-4">Ready to watch? Enter your email to create or restart your membership.</h3>
+            <div class="flex justify-center mb-6">
+                <input type="email" placeholder="Email address" class="px-4 py-2 text-black rounded-l-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500">
+                <button class="bg-red-600 text-white font-bold py-2 px-4 rounded-r-md hover:bg-red-700 transition duration-300 ml-2">
+                    Get Started &gt;
+                </button>
+            </div>
+            <div class="text-red-600 absolute top-8 left-12 ">
+                <h1 class="text-3xl font-semibold mb-6">NETFLIX</h1>
+            </div>
+            <div class="absolute top-8 right-12 ">
+                <button class="bg-red-600 text-white font-semibold py-2 px-4 rounded transition duration-300 hover:bg-red-800">
+                    Sign In
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Trending Now Section -->
+    <div class="footer-background w-full">
+        <div class="w-full pt-10 pb-6">
+            <div class="mt-16 mb-4 max-w-screen-lg mx-auto">
+                <h3 class="text-1xl font-bold mb-4 text-left justify-center">Trending Now</h3>
+                    <select class="bg-gray-800 text-white border border-gray-600 rounded p-2 mb-4 text-left">
+                        <option>Pakistan</option>
+                        <option>Global</option>
+                    </select>
+                    <select class="bg-gray-800 text-white border border-gray-600 rounded p-2 mb-4 text-left">
+                        <option>Movies</option>
+                        <option>TV Shows</option>
+                    </select>
+            </div>
+            <div class="bg-gray-800 flex flex-col justify-center mx-auto" style="max-width: 1000px;">
+                <!-- Movie Section with Horizontal Scroll -->
+                <div id="loading" style="display: none;">Loading movies...</div>
+                <div class="scroll-container" id="movieScroll">
+                
+                </div>
+            </div>
+        <div class="flex justify-between items-center mx-auto" style="max-width: 1030px;">
+            <div class="flex-grow"></div>
+            <button id="scrollButton" class="scroll-button bg-gray-800 text-white border border-gray-600 rounded h-24 ml-2" style="margin-right:-60px;">
+                <span class="arrow text-xl">&gt;</span>
+            </button>
+        </div>
+        <div class="flex justify-between items-center mx-auto" style="max-width: 1030px;">
+            <button id="scrollButton1" class="scroll-button1 bg-gray-800 text-white border border-gray-600 rounded h-24 ml-2" style="margin-left:40px;">
+                <span class="arrow text-xl">&lt;</span>
+            </button>
+            <div class="flex-grow"></div>
+        </div>
+        <div class="mt-16 w-full mb-4 max-w-screen-lg mx-auto">
+            <h3 class="text-1xl font-bold mb-4 text-left">More Reasons to Join</h3>
+            <div class="flex flex-wrap justify-center">
+                <div class="reason-card max-w-screen-lg mx-auto">
+                    <h3 class="font-semibold text-white">Enjoy on your TV</h3>
+                    <p class="text-sm text-gray-300">Watch on Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, and more.</p>
+                    <i class="fas fa-tv text-white text-2xl mt-2"></i>
+                </div>
+                <div class="reason-card max-w-screen-lg mx-auto">
+                    <h3 class="font-semibold text-white">Downloads to watch offline</h3>
+                    <p class="text-sm text-gray-300">Save your favorites movies easily and always have something to watch.</p>
+                    <i class="fas fa-download text-white text-2xl mt-2"></i>
+                </div>
+                <div class="reason-card max-w-screen-lg mx-auto">
+                    <h3 class="font-semibold text-white">Watch everywhere</h3>
+                    <p class="text-sm text-gray-300">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+                    <i class="fas fa-bullhorn text-white text-2xl mt-2"></i>
+                </div>
+                <div class="reason-card max-w-screen-lg mx-auto">
+                    <h3 class="font-semibold text-white">Create profiles for kids</h3> 
+                    <p class="text-sm text-gray-300">Send kids on adventures with their favorite characters in a space made just for them — free with your membership.</p>
+                    <i class="fas fa-user text-white text-2xl mt-2"></i>
+                </div>
+            </div>
+        </div>
+        <div class="mt-16 w-full mb-4 max-w-screen-lg mx-auto">
+            <h3 class="text-1xl font-bold mb-4 text-left">Frequently Asked Questions</h3>
+            <div class="mb-4 max-w-screen-lg mx-auto">
+                <div class="faq-item flex justify-between items-center bg-gray-800 p-3 rounded-lg mb-2">
+                    <h3 class="text-lg">What is Netflix?</h3>
+                    <span class="text-2xl font-bold cursor-pointer">+</span>
+                </div>
+                <div class="faq-item flex justify-between items-center bg-gray-800 p-3 rounded-lg mb-2">
+                    <h3 class="text-lg">How much does Netflix cost?</h3>
+                    <span class="text-2xl font-bold cursor-pointer">+</span>
+                </div>
+                <div class="faq-item flex justify-between items-center bg-gray-800 p-3 rounded-lg mb-2">
+                    <h3 class="text-lg">Where can I watch?</h3>
+                    <span class="text-2xl font-bold cursor-pointer">+</span>
+                </div>
+                <div class="faq-item flex justify-between items-center bg-gray-800 p-3 rounded-lg mb-2">
+                    <h3 class="text-lg">How do I cancel?</h3>
+                    <span class="text-2xl font-bold cursor-pointer">+</span>
+                </div>
+                <div class="faq-item flex justify-between items-center bg-gray-800 p-3 rounded-lg mb-2">
+                    <h3 class="text-lg">What can I watch on Netflix?</h3>
+                    <span class="text-2xl font-bold cursor-pointer">+</span>
+                </div>
+                <div class="faq-item flex justify-between items-center bg-gray-800 p-3 rounded-lg mb-2">
+                    <h3 class="text-lg">Is Netflix good for kids?</h3>
+                    <span class="text-2xl font-bold cursor-pointer">+</span>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-10 mb-6 w-full">
+            <h3 class="font-semibold">Ready to watch? Enter your email to create or restart your membership.</h3>
+            <br>
+            <div class="flex justify-center mb-6">
+                <input type="email" placeholder="Email address" class="px-4 py-2 text-black border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500">
+                <button class="bg-red-600 text-white font-bold py-2 px-4 rounded-r-md hover:bg-red-700 transition duration-300 ml-2">
+                    Get Started &gt;
+                </button>
+            </div>
+        </div>
+        <div class="mt-16 max-w-screen-lg mx-auto">
+            <div class="bg-gray-900 text-white footer-background max-w-full mx-auto p-4">
+                <div class="text-left mb-4">
+                    <p class="font-semibold mt-2 underline">Questions? Contact us.</p>
+                </div>
+            </div>
+            <div class="bg-gray-900 text-white footer-background w-full p-4">    
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="flex flex-col space-y-1">
+                        <a href="#" class="footer-link">FAQ</a>
+                        <a href="#" class="footer-link">Investor Relations</a>
+                        <a href="#" class="footer-link">Privacy</a>
+                        <a href="#" class="footer-link">Speed Test</a>
+                    </div>
+                    <div class="flex flex-col space-y-1">
+                        <a href="#" class="footer-link">Help Center</a>
+                        <a href="#" class="footer-link">Jobs</a>
+                        <a href="#" class="footer-link">Cookie Preferences</a>
+                        <a href="#" class="footer-link">Legal Notices</a>
+                    </div>
+                    <div class="flex flex-col space-y-1">
+                        <a href="#" class="footer-link">Account</a>
+                        <a href="#" class="footer-link">Ways to Watch</a>
+                        <a href="#" class="footer-link">Corporate Information</a>
+                        <a href="#" class="footer-link">Only on Netflix</a>
+                    </div>
+                    <div class="flex flex-col space-y-1">
+                        <a href="#" class="footer-link">Media Center</a>
+                        <a href="#" class="footer-link">Terms of Use</a>
+                        <a href="#" class="footer-link">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-900 text-white footer-background max-w-full mx-auto p-4">
+                <div class="mt-6">
+                    <select class="bg-gray-800 text-white border border-gray-600 rounded p-2">
+                        <option>English</option>
+                        <option>Spanish</option>
+                    </select>
+                </div>
+                <br>
+                <br>
+                <div class="mt-2">
+                    <p class="text-sm">Netflix Pakistan</p>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script src="script.js"></script>   
+</body>
+</html>
